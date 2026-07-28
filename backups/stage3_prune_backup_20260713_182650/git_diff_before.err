@@ -1,0 +1,124 @@
+warning: 不是 git 仓库。使用 --no-index 比较工作区之外的两个路径
+用法：git diff --no-index [<选项>] <路径> <路径>
+
+差异输出格式化选项
+    -p, --patch           生成补丁
+    -s, --no-patch        不显示差异输出
+    -u                    生成补丁
+    -U, --unified[=<n>]   生成含 <n> 行上下文的差异
+    -W, --function-context
+                          生成含 <n> 行上下文的差异
+    --raw                 生成原始格式的差异
+    --patch-with-raw      和 '-p --raw' 同义
+    --patch-with-stat     和 '-p --stat' 同义
+    --numstat             机器友好的 --stat
+    --shortstat           只输出 --stat 的最后一行
+    -X, --dirstat[=<参数1,参数2>...]
+                          输出每个子目录相对变更的分布
+    --cumulative          和 --dirstat=cumulative 同义
+    --dirstat-by-file[=<参数1,参数2>...]
+                          是 --dirstat=files,param1,param2... 的同义词
+    --check               如果变更中引入冲突定界符或空白错误，给出警告
+    --summary             精简摘要，例如创建、重命名和模式变更
+    --name-only           只显示变更文件的文件名
+    --name-status         只显示变更文件的文件名和状态
+    --stat[=<宽度>[,<文件名宽度>[,<次数>]]]
+                          生成差异统计（diffstat）
+    --stat-width <宽度>   使用给定的长度生成差异统计
+    --stat-name-width <宽度>
+                          使用给定的文件名长度生成差异统计
+    --stat-graph-width <宽度>
+                          使用给定的图形长度生成差异统计
+    --stat-count <次数>   生成有限行数的差异统计
+    --compact-summary     生成差异统计的简洁摘要
+    --binary              输出一个可以应用的二进制差异
+    --full-index          在 "index" 行显示完整的前后对象名称
+    --color[=<何时>]      显示带颜色的差异
+    --ws-error-highlight <类型>
+                          对于差异中的上下文、旧的和新的行，加亮显示错误的空白字符
+    -z                    在 --raw 或者 --numstat 中，不对路径字符转码并使用 NUL 字符做为输出字段的分隔符
+    --abbrev[=<n>]        用 <n> 位数字显示对象名
+    --src-prefix <前缀>   显示给定的源前缀取代 "a/"
+    --dst-prefix <前缀>   显示给定的目标前缀取代 "b/"
+    --line-prefix <前缀>  输出的每一行附加前缀
+    --no-prefix           不显示任何源和目标前缀
+    --inter-hunk-context <n>
+                          显示指定行数的差异块间的上下文
+    --output-indicator-new <字符>
+                          指定一个字符取代 '+' 来表示新的一行
+    --output-indicator-old <字符>
+                          指定一个字符取代 '-' 来表示旧的一行
+    --output-indicator-context <字符>
+                          指定一个字符取代 ' ' 来表示一行上下文
+
+差异重命名选项
+    -B, --break-rewrites[=<n>[/<m>]]
+                          将完全重写的变更打破为成对的删除和创建
+    -M, --find-renames[=<n>]
+                          检测重命名
+    -D, --irreversible-delete
+                          省略删除操作的差异输出
+    -C, --find-copies[=<n>]
+                          检测拷贝
+    --find-copies-harder  使用未修改的文件做为发现拷贝的源
+    --no-renames          禁用重命名探测
+    --rename-empty        使用空的数据对象做为重命名的源
+    --follow              继续列出文件重命名以外的历史记录
+    -l <n>                如果重命名/拷贝目标超过给定的限制，禁止重命名/拷贝检测
+
+差异算法选项
+    --minimal             生成尽可能小的差异
+    -w, --ignore-all-space
+                          行比较时忽略空白字符
+    -b, --ignore-space-change
+                          忽略空白字符的变更
+    --ignore-space-at-eol
+                          忽略行尾的空白字符变更
+    --ignore-cr-at-eol    忽略行尾的回车符（CR）
+    --ignore-blank-lines  忽略整行都是空白的变更
+    -I, --ignore-matching-lines <正则>
+                          忽略所有行都和正则表达式匹配的变更
+    --indent-heuristic    启发式转换差异边界以便阅读
+    --patience            使用 "patience diff" 算法生成差异
+    --histogram           使用 "histogram diff" 算法生成差异
+    --diff-algorithm <算法>
+                          选择一个差异算法
+    --anchored <文本>     使用 "anchored diff" 算法生成差异
+    --word-diff[=<模式>]  显示单词差异，使用 <模式> 分隔变更的单词
+    --word-diff-regex <正则>
+                          使用 <正则表达式> 确定何为一个词
+    --color-words[=<正则>]
+                          相当于 --word-diff=color --word-diff-regex=<正则>
+    --color-moved[=<模式>]
+                          移动的代码行用不同方式着色
+    --color-moved-ws <模式>
+                          在 --color-moved 下如何忽略空白字符
+
+其它差异选项
+    --relative[=<前缀>]   当从子目录运行，排除目录之外的变更并显示相对路径
+    -a, --text            把所有文件当做文本处理
+    -R                    交换两个输入，反转差异
+    --exit-code           有差异时退出码为 1，否则为 0
+    --quiet               禁用本程序的所有输出
+    --ext-diff            允许执行一个外置的差异助手
+    --textconv            当比较二进制文件时，运行外部的文本转换过滤器
+    --ignore-submodules[=<何时>]
+                          在生成差异时，忽略子模组的更改
+    --submodule[=<格式>]  指定子模组的差异如何显示
+    --ita-invisible-in-index
+                          隐藏索引中 'git add -N' 条目
+    --ita-visible-in-index
+                          将索引中 'git add -N' 条目当做真实的
+    -S <字符串>           查找改变了指定字符串出现次数的差异
+    -G <正则>             查找改变指定正则匹配出现次数的差异
+    --pickaxe-all         显示使用 -S 或 -G 的变更集的所有变更
+    --pickaxe-regex       将 -S 的 <string> 当做扩展的 POSIX 正则表达式
+    -O <文件>             控制输出中的文件显示顺序
+    --rotate-to <路径>    先显示指定路径的变更
+    --skip-to <路径>      跳过指定路径的输出
+    --find-object <对象 ID>
+                          查找改变指定对象出现次数的差异
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          通过差异类型选择文件
+    --output <文件>       输出到一个指定的文件
+

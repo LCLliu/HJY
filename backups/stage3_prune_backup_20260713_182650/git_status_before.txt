@@ -1,0 +1,1 @@
+git status failed; repository metadata unavailable in this environment.
